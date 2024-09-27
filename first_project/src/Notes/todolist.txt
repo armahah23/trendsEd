@@ -1,0 +1,82 @@
+import React from "react";
+import { useState } from "react";
+
+export default function Component1() {
+  const [toDoList, setToDoList] = useState([
+    { task: "Home Work", isCompleted: false },
+    { task: "Clean House", isCompleted: true },
+  ]);
+  const [toDo, setToDo] = useState();
+
+  const addToDO = () => {
+    let newTask = {
+      task: toDo,
+      isCompleted: false,
+    };
+    setToDoList([...toDoList, newTask]);
+    setToDo("");
+  };
+  const markDone = (index) => {
+    let anotherToDoList = toDoList.map((item, i) => {
+      if (i == index) {
+        item.isCompleted = true;
+        return item;
+      } else {
+        return item;
+      }
+    });
+
+    setToDoList(anotherToDoList);
+  };
+  const markUndone = (index) => {
+    let anotherToDoList = toDoList.map((item, i) => {
+      if (i == index) {
+        item.isCompleted = false;
+        return item;
+      } else {
+        return item;
+      }
+    });
+
+    setToDoList(anotherToDoList);
+  };
+
+  return (
+    <div>
+      <h1>ToDo App</h1>
+      <div>
+        <input
+          type="text"
+          value={toDo}
+          onChange={(e) => setToDo(e.target.value)}
+        />
+        <button onClick={() => addToDO()}>Add my todo</button>
+      </div>
+      {toDoList.length > 0 ? (
+        <div>
+          {toDoList.map((item, index) => (
+            <div style={{ padding: "5px", border: "1px solid gray" }}>
+              {item.isCompleted ? (
+                <div>
+                  <s>{item.task} </s>
+                  <button onClick={() => markUndone(index)}>
+                    Mark as incomplete
+                  </button>
+                </div>
+              ) : (
+                <div>
+                  {item.task}
+                  <button onClick={() => markDone(index)}>
+                    Mark as complete
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      ) : (
+        <>No works Available</>
+      )}
+    </div>
+  );
+}
