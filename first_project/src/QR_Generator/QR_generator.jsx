@@ -1,9 +1,14 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import QRCode from "react-qr-code";
 
 function QR_generator() {
   const [url, setUrl] = useState("");
   const [qr, setQr] = useState("");
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
 
   const handleClick = () => {
     setQr(url);
@@ -17,6 +22,7 @@ function QR_generator() {
         placeholder="Enter URL here"
         value={url}
         onChange={(e) => setUrl(e.target.value)}
+        ref={inputRef}
         style={{
           display: "block",
           padding: "20px",
