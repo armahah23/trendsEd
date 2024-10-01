@@ -3,9 +3,12 @@
 // import ButtonChange from "./components/ButtonChange"
 // import Calculator from "./components/Calculator";
 // import ToDo from "./components/ToDo";
+// import QR_generator from "./QR_Generator/QR_generator";
+
+import Content from "./components/Content";
+import Navbar from "./components/Navbar";
 
 
-import QR_generator from "./QR_Generator/QR_generator";
 
 
 function App() {
@@ -15,8 +18,9 @@ function App() {
       {/* <ButtonChange /> */}
       {/* <Array /> */}
       {/* <Calculator /> */}
-      
-      <QR_generator />
+      {/* <QR_generator /> */}
+      <Navbar />
+      <Content />
     </>
   );
 }
