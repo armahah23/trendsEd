@@ -8,23 +8,21 @@ const AuthContext = createContext(null);
 
 //AuthProvider for export
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('');
+  const userArray = [
+    { username: "Afrih", password: "1234", name: "Afrih" },
+    { username: "user2", password: "password2", name: "Jane Smith" },
+  ];
 
   const navigate = useNavigate();
 
-  // const userArray = [
-  //     {
-  //         username: "user1",
-  //         password: "password1"
-  //     },
-  //     {
-  //         username: "user2",
-  //         password: "password2"
-  //     }
-  // ]
-
-  const login = (username) => {
-    setUser(username);
+  const login = (username, password) => {
+    const foundUser = userArray.find(
+      (user) => user.username === username && user.password === password
+    );
+    if (foundUser) {
+      setUser(foundUser.username);
+    }
     navigate("/");
   };
 
