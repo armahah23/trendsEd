@@ -1,0 +1,32 @@
+.nav-page {
+    height: 20vh;
+    background: #353535;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.nav-container h1 {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #d14141;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ button:hover {
+    background-color: #970000;
+}

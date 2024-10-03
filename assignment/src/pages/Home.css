@@ -1,0 +1,16 @@
+.home-container {
+    height: 80vh;
+}
+
+.content h3 {
+    font-size: 2rem;
+    color: #af2525;
+    text-transform: uppercase;
+    margin: 10px 15px;
+}
+
+.content p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 10px 15px;
+}

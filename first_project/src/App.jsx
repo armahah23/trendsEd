@@ -5,8 +5,12 @@
 // import ToDo from "./components/ToDo";
 // import QR_generator from "./QR_Generator/QR_generator";
 
+import { AuthProvider } from "../context/AuthContext";
+import { Routes, Route } from "react-router";
 import Content from "./components/Content";
 import Navbar from "./components/Navbar";
+import Login from "./pages/Login";
+import ProvideRoutes from "./utils/ProvideRoutes";
 
 
 
@@ -19,8 +23,16 @@ function App() {
       {/* <Array /> */}
       {/* <Calculator /> */}
       {/* <QR_generator /> */}
-      <Navbar />
-      <Content />
+      <AuthProvider>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<ProvideRoutes>
+            <Content />
+          </ProvideRoutes>} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </AuthProvider>
+      
     </>
   );
 }

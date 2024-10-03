@@ -1,18 +1,34 @@
 import { createContext, useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 
-const AuthContext = createContext(null);
+const Authcontext = createContext(null);
 
 export const AuthProvider = ({children}) => {
-    const [user, setUser] = useState("John");
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
+
+    const login = (username) => {
+        setUser(username);
+        navigate('/');
+    };
+
+    const logout = () => {
+        setUser(null);
+        navigate('/login');
+    };
 
     return (
-        <AuthContext.Provider value={{user}}>
-        {children}
-        </AuthContext.Provider>
+        <Authcontext.Provider value={{user,login, logout}}>
+            {children}
+        </Authcontext.Provider>
     )
 }
+AuthProvider.propTypes = {
+    children: PropTypes.node.isRequired,
+};
 
 export const useAuth = () => {
-    return useContext(AuthContext);
+    return useContext(Authcontext);
 }
