@@ -1,6 +1,14 @@
+
+import { useAuth } from "../context/AuthContext";
 import "./login.css";
 
 export default function Login() {
+
+    const {login} = useAuth();
+
+    
+
+    
   return (
     <>
       <div className="page-container">
@@ -10,7 +18,7 @@ export default function Login() {
           <input type="text" placeholder="Enter username" />
           <label htmlFor="password">Password</label>
           <input type="text" placeholder="Enter password" />
-          <button>Login</button>
+          <button onClick={() => {login('Afrih')}}>Login</button>
         </div>
       </div>
     </>

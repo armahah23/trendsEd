@@ -30,3 +30,8 @@ button {
  button:hover {
     background-color: #970000;
 }
+
+#home-login {
+    position: absolute;
+    right: 10px;
+}

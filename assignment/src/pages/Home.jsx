@@ -1,10 +1,10 @@
-import Navbar from '../components/Navbar';
+// import Navbar from '../components/Navbar';
 import './Home.css';
 
 function Home() {
   return (
     <>
-    <Navbar />
+    
         <div className="home-container">
             <div className="content">
             <h3>Wel come to this page. </h3>
