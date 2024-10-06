@@ -1,0 +1,24 @@
+.post-feed {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.post-feed img {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.post-feed input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #f0f0f0;
+}

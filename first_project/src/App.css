@@ -1,4 +1,4 @@
-nav ul {
+/* nav ul {
   list-style-type: none;
   padding: 0;
 }
@@ -22,4 +22,11 @@ button {
   color: white;
   border: none;
   padding: 10px 20px;
+} */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
