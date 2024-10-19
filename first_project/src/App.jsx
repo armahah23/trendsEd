@@ -1,38 +1,19 @@
-// import Home from "./pages/Home"
-// import Array from "./components/Array"
-// import ButtonChange from "./components/ButtonChange"
-// import Calculator from "./components/Calculator";
-// import ToDo from "./components/ToDo";
-// import QR_generator from "./QR_Generator/QR_generator";
-
-import { AuthProvider } from "../context/AuthContext";
 import { Routes, Route } from "react-router";
 import Content from "./components/Content";
-import Navbar from "./components/Navbar";
+
 import Login from "./pages/Login";
-import ProvideRoutes from "./utils/ProvideRoutes";
-
-
-
+import Crud from "./components/crud";
+import MainUi from "../mailBox/mainUi";
 
 function App() {
   return (
     <>
-      {/* <Home /> */}
-      {/* <ButtonChange /> */}
-      {/* <Array /> */}
-      {/* <Calculator /> */}
-      {/* <QR_generator /> */}
-      <AuthProvider>
-        <Navbar />
         <Routes>
-          <Route path="/" element={<ProvideRoutes>
-            <Content />
-          </ProvideRoutes>} />
+          <Route path="/content" element={<Content />} />
+          <Route path="/mailbox" element={<MainUi />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/crud" element={<Crud />} />
         </Routes>
-      </AuthProvider>
-      
     </>
   );
 }
